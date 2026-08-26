@@ -1,6 +1,6 @@
 # Statistical Models for Ranking Data
 
-This repository contains the R code used for the MSc dissertation **Statistical Models for Ranking Data**.
+This repository contains the R code used for the MSc dissertation Statistical Models for Ranking Data.
 
 The repository is organised into two folders:
 
