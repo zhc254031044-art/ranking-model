@@ -25,7 +25,7 @@ n <- 5
 win_mat <- matrix(0, nrow = n, ncol = n, dimnames = list( paste0("A", 1:n), paste0("A", 1:n)))
 
 # Convert ranking data into pairwise win counts
-for (s in seq_along(orders)) {
+for (s in 1:length(orders)) {
   
   ranking <- orders[[s]]
   count <- counts[s]
