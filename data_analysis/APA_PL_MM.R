@@ -27,7 +27,7 @@ complete_counts <- counts[complete_index]
 
 # Add missing candidate for top-4 rankings
 
-for (i in seq_along(complete_orders)) {
+for (i in 1:length(complete_orders)) {
   ranking <- complete_orders[[i]]
   # If only four candidates are ranked, add the remaining candidate as the last position
   if (length(ranking) == 4) {
@@ -43,7 +43,7 @@ complete_rankings_num <- matrix(nrow = sum(complete_counts),ncol = 5)
 row_index <- 1
 
 # Add each ranking pattern according to its corresponding voter count
-for (i in seq_along(complete_orders)) {
+for (i in 1:length(complete_orders)) {
   
   ranking <- complete_orders[[i]]
   count <- complete_counts[i]
