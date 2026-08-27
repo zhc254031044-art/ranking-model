@@ -24,7 +24,7 @@ apa_rankings_num <- matrix(nrow = sum(counts),ncol = 5)
 row_index <- 1
 
 # Add each ranking pattern according to its corresponding voter count
-for (i in seq_along(orders)) {
+for (i in 1:length(orders)) {
   ranking <- orders[[i]]
   count <- counts[i]
   
