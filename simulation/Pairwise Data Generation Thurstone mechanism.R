@@ -132,13 +132,16 @@ set.seed(123)
 true_order <- c("A1", "A2", "A3", "A4", "A5")
 
 for (score_name in names(score_list)) {
+  
   w_true <- score_list[[score_name]]
+  
   for (N in sample_sizes) {
     
     # Initialise logical vectors of length B with FALSE values
     thurstone_recovery <- logical(B)
     bt_recovery <- logical(B)
-    
+
+    # Initialise numeric vectors of length B with zero values
     thurstone_distance <- numeric(B)
     bt_distance <- numeric(B)
     
