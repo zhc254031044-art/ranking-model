@@ -109,12 +109,12 @@ bayesian_pl_fit <- gibbsPLMIX(
 posterior_scores <- bayesian_pl_fit$P
 
 # Posterior means
-bayesian_scores <- colMeans( posterior_scores)
+bayesian_scores <- colMeans(posterior_scores)
 
-names(bayesian_scores) <- paste0("A",1:5)
+names(bayesian_scores) <- paste0("A", 1:5)
 
 # Estimated ranking
-bayesian_ranking <- names(sort( bayesian_scores, decreasing = TRUE))
+bayesian_ranking <- names(sort(bayesian_scores, decreasing = TRUE))
 
 # 6. Results
 
