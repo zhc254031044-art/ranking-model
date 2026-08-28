@@ -49,7 +49,6 @@ generate_pl_data <- function(w_true, N) {
   complete_rankings
 }
 
-
 # 3. Fit the Plackett-Luce model
 
 fit_pl <- function(complete_rankings) {
@@ -76,7 +75,6 @@ fit_pl <- function(complete_rankings) {
   pl_ranking
 }
 
-
 # 4. Fit the Mallows model
 
 fit_mallows <- function(complete_rankings) {
@@ -93,7 +91,6 @@ fit_mallows <- function(complete_rankings) {
   mm_ranking <- paste0("A", mm_mode)
   mm_ranking
 }
-
 
 # 5. Kendall distance
 
@@ -117,8 +114,6 @@ kendall_distance <- function(estimated_order, true_order) {
   }
   distance
 }
-
-
 
 # 6. Simulation main loop
 
