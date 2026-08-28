@@ -3,7 +3,7 @@ library(BradleyTerry2)
 
 # 1. Read APA data
 
-lines <- readLines("D:/KCL/ranking/code/Empirical Analysis/APA.soi")
+lines <- readLines("data_analysis/APA.soi")
 
 # Remove comments and empty lines
 data_lines <- lines[!grepl("^#", lines)]
