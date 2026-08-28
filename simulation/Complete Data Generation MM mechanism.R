@@ -15,7 +15,7 @@ B <- 100
 
 central_ranking <- c(1, 2, 3, 4, 5)
 
-# 2. Generate complete ranking data under the Mallows mechanism
+# 2. Generate Mallows complete ranking data
 
 generate_mallows_data <- function(alpha, N) {
   
