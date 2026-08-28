@@ -97,7 +97,6 @@ fit_bt <- function(pairwise_matrix) {
   bt_ranking
 }
 
-
 # 5. Kendall distance
 
 kendall_distance <- function(estimated_order, true_order) {
@@ -120,7 +119,6 @@ kendall_distance <- function(estimated_order, true_order) {
   }
   distance
 }
-
 
 # 6. Simulation main loop
 
