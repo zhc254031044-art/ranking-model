@@ -78,7 +78,7 @@ bayesian_rankings_num[is.na(bayesian_rankings_num)] <- 0
 n_iter <- 2000
 n_burn <- 400
 
-# Fit Bayesian Plackett--Luce model
+# Fit Bayesian Plackett-Luce model
 bayesian_pl_fit <- gibbsPLMIX(
   pi_inv = bayesian_rankings_num,
   K = 5,
