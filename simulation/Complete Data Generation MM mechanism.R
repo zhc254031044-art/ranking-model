@@ -1,7 +1,6 @@
 library(PerMallows)
 library(PlackettLuce)
 
-
 # 1. Simulation settings
 
 alpha_list <- list(
@@ -15,7 +14,6 @@ sample_sizes <- c(100, 500, 1000)
 B <- 100
 
 central_ranking <- c(1, 2, 3, 4, 5)
-
 
 # 2. Generate complete ranking data under the Mallows mechanism
 
