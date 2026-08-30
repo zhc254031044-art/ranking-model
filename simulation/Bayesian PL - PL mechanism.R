@@ -161,3 +161,56 @@ for (score_name in names(score_list)) {
     cat("Bayesian PL mean Kendall distance:", mean(bayesian_distance), "\n")
   }
 }
+
+# 7. Compare posterior means using 1000 and 2000 Gibbs iterations
+
+set.seed(123)
+
+w_true <- score_list$medium
+N <- 50
+
+# Generate one simulated dataset
+complete_rankings <- generate_pl_data(w_true, N)
+partial_rankings <- make_partial_data(complete_rankings)
+
+# Fit with 1000 iterations
+fit_1000  <- gibbsPLMIX(
+  pi_inv = partial_rankings,
+  K = 5,
+  G = 1,
+  n_iter = 1000,
+  n_burn = 200,
+  hyper = list(
+    shape0 = matrix(1, nrow = 1, ncol = 5),
+    rate0 = 0.001,
+    alpha0 = 1
+  )
+)
+
+# Fit with 2000 iterations
+fit_2000  <- gibbsPLMIX(
+  pi_inv = partial_rankings,
+  K = 5,
+  G = 1,
+  n_iter = 2000,
+  n_burn = 400,
+  hyper = list(
+    shape0 = matrix(1, nrow = 1, ncol = 5),
+    rate0 = 0.001,
+    alpha0 = 1
+  )
+)
+
+# Posterior draws of the score parameters
+posterior_scores_1000 <- fit_1000$P
+posterior_scores_2000 <- fit_2000$P
+
+# Posterior means
+bayesian_scores_1000 <- colMeans(posterior_scores_1000)
+names(bayesian_scores_1000) <- paste0("A",1:5)
+
+bayesian_scores_2000 <- colMeans(posterior_scores_2000)
+names(bayesian_scores_2000) <- paste0("A",1:5)
+
+bayesian_scores_1000
+bayesian_scores_2000
